@@ -36,7 +36,7 @@ is to wrap assertions into helper method:
         }
     }
 
-
+ 
 ## Small print
 
 Author: Laszlo Pap &copy; 2014

@@ -32,8 +32,8 @@
     "test"
   ],
   "author": {
-    "name": "Gleb Bahmutov",
-    "email": "gleb.bahmutov@gmail.com"
+    "name": ["Gleb Bahmutov", "Laszlo Pap"]  ,
+    "email": ["gleb.bahmutov@gmail.com", "lacpapi@gmail.com"]
   },
   "license": "MIT",
   "gitHead": "983daf4827399a19ed85742927c0bf3775c47d5d",

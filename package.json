@@ -35,6 +35,6 @@
   "bugs": {
     "url": "https://github.com/bahmutov/clean-console/issues"
   },
-  "_id": "read_browser_console@0.0.1",
-  "_from": "read_browser_console@0.2.2"
+  "_id": "read_browser_console@1.0",
+  "_from": "read_browser_console@1.0"
 }

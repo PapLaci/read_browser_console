@@ -1,0 +1,48 @@
+# clean-console
+
+Quickly loads a remote page using [phantomjs](http://phantomjs.org/)
+to check if there are any JavaScript console errors.
+
+
+This is a copy (and a few added lines) of Gleb Bahmutov's clean-console.(https://www.npmjs.org/package/clean-console)
+All credits goes to him.
+
+## Install and use
+
+    npm install -g clean-console
+    // assumes phantomjs is installed
+    clean-console -i <url>
+
+***Note:*** only actual exceptions will be logged, failed `console.assert` statements ***DO NOT***
+cause a true browser error (unlike nodejs).
+
+A good pattern to unify nodejs/browser assertion handling
+is to wrap assertions into helper method:
+
+    function really(condition, message) {
+        console.assert(condition, message); // stops nodejs execution
+        if (!condition) {
+            // stop execution in a browser
+            throw new Error(condition.toString() + ' failed, ' + message);
+        }
+    }
+
+
+## Small print
+
+Author: Laszlo Pap &copy; 2014
+
+License: MIT - do anything with the code, but don't blame me if it does not work.
+
+Support: if you find any problems with this module, email / open issue on Github
+
+[clean-console-icon]: https://nodei.co/npm/clean-console.png?downloads=true
+[clean-console-url]: https://npmjs.org/package/clean-console
+[clean-console-ci-image]: https://travis-ci.org/bahmutov/clean-console.png?branch=master
+[clean-console-ci-url]: https://travis-ci.org/bahmutov/clean-console
+[clean-console-dependencies-image]: https://david-dm.org/bahmutov/clean-console.png
+[clean-console-dependencies-url]: https://david-dm.org/bahmutov/clean-console
+[clean-console-devdependencies-image]: https://david-dm.org/bahmutov/clean-console/dev-status.png
+[clean-console-devdependencies-url]: https://david-dm.org/bahmutov/clean-console#info=devDependencies
+[endorse-image]: https://api.coderwall.com/bahmutov/endorsecount.png
+[endorse-url]: https://coderwall.com/bahmutov

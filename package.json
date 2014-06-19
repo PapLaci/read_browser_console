@@ -1,42 +1,21 @@
 {
-  "name": "clean-console",
+  "name": "read_browser_console",
   "version": "0.2.2",
-  "description": "Quickly loads remote url in phantomjs to check of JavaScript console errors",
+  "description": "Quickly loads remote url in phantomjs to check of JavaScript console errors.Finally the promise returns the console data.",
   "main": "index.js",
-  "bin": {
-    "clean-console": "index.js"
-  },
   "scripts": {
-    "test": "gulp && npm run unit && npm run e2e",
-    "basic": "node index.js -i examples/basic/index.html -o",
-    "unit": "node node_modules/gt test/test.js",
-    "e2e": "node node_modules/gt test/e2e.js"
+    "basic": "node index.js -i examples/basic/index.html -o"
   },
-  "pre-commit": [
-    "gulp",
-    "npm test"
-  ],
-  "pre-push": [
-    "rm -rf node_modules",
-    "npm install",
-    "npm test"
-  ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/bahmutov/clean-console.git"
+    "url": "https://github.com/PapLaci/read_browser_console.git"
   },
-  "keywords": [
-    "javascript",
-    "phantomjs",
-    "console",
-    "test"
-  ],
   "author": {
-    "name": ["Gleb Bahmutov", "Laszlo Pap"]  ,
-    "email": ["gleb.bahmutov@gmail.com", "lacpapi@gmail.com"]
+    "name": "Gleb Bahmutov, Laszlo Pap" ,
+    "email": "gleb.bahmutov@gmail.com, lacpapi@gmail.com"
   },
   "license": "MIT",
-  "gitHead": "983daf4827399a19ed85742927c0bf3775c47d5d",
+  "gitHead": "ed2ff312ab9c65a89b84c27a6ec6302dc11920b5",
   "readmeFilename": "README.md",
   "dependencies": {
     "optimist": "0.6.0",
@@ -50,13 +29,12 @@
     "pre-git": "0.0.15",
     "jshint-stylish": "~0.1.5",
     "gulp-jshint": "~1.3.4",
-    "gulp": "~3.5.0",
-    "win-spawn": "~1.1.2"
+    "gulp": "~3.5.0"
   },
-  "readme": "# clean-console\n\nQuickly loads a remote page using [phantomjs](http://phantomjs.org/)\nto check if there are any JavaScript console errors.\n\n[![NPM][clean-console-icon]][clean-console-url]\n\n[![Build status][clean-console-ci-image]][clean-console-ci-url]\n[![dependencies][clean-console-dependencies-image]][clean-console-dependencies-url]\n[![devdependencies][clean-console-devdependencies-image]][clean-console-devdependencies-url]\n[![endorse][endorse-image]][endorse-url]\n\n## Install and use\n\n    npm install -g clean-console\n    // assumes phantomjs is installed\n    clean-console -i <url>\n\n***Note:*** only actual exceptions will be logged, failed `console.assert` statements ***DO NOT***\ncause a true browser error (unlike nodejs).\n\nA good pattern to unify nodejs/browser assertion handling\nis to wrap assertions into helper method:\n\n    function really(condition, message) {\n        console.assert(condition, message); // stops nodejs execution\n        if (!condition) {\n            // stop execution in a browser\n            throw new Error(condition.toString() + ' failed, ' + message);\n        }\n    }\n\n## Small print\n\nAuthor: Gleb Bahmutov &copy; 2013\n\nLicense: MIT - do anything with the code, but don't blame me if it does not work.\n\nSupport: if you find any problems with this module, email / tweet / open issue on Github\n\n[clean-console-icon]: https://nodei.co/npm/clean-console.png?downloads=true\n[clean-console-url]: https://npmjs.org/package/clean-console\n[clean-console-ci-image]: https://travis-ci.org/bahmutov/clean-console.png?branch=master\n[clean-console-ci-url]: https://travis-ci.org/bahmutov/clean-console\n[clean-console-dependencies-image]: https://david-dm.org/bahmutov/clean-console.png\n[clean-console-dependencies-url]: https://david-dm.org/bahmutov/clean-console\n[clean-console-devdependencies-image]: https://david-dm.org/bahmutov/clean-console/dev-status.png\n[clean-console-devdependencies-url]: https://david-dm.org/bahmutov/clean-console#info=devDependencies\n[endorse-image]: https://api.coderwall.com/bahmutov/endorsecount.png\n[endorse-url]: https://coderwall.com/bahmutov\n",
+  "readme": "# read_browser_console\n\nQuickly loads a remote page using [phantomjs](http://phantomjs.org/)\nto check if there are any JavaScript console errors.\n\n[![NPM][clean-console-icon]][clean-console-url]\n\n[![Build status][clean-console-ci-image]][clean-console-ci-url]\n[![dependencies][clean-console-dependencies-image]][clean-console-dependencies-url]\n[![devdependencies][clean-console-devdependencies-image]][clean-console-devdependencies-url]\n[![endorse][endorse-image]][endorse-url]\n\n## Install and use\n\n    npm install -g clean-console\n    // assumes phantomjs is installed\n    clean-console -i <url>\n\n***Note:*** only actual exceptions will be logged, failed `console.assert` statements ***DO NOT***\ncause a true browser error (unlike nodejs).\n\nA good pattern to unify nodejs/browser assertion handling\nis to wrap assertions into helper method:\n\n    function really(condition, message) {\n        console.assert(condition, message); // stops nodejs execution\n        if (!condition) {\n            // stop execution in a browser\n            throw new Error(condition.toString() + ' failed, ' + message);\n        }\n    }\n\n## Small print\n\nAuthor: Gleb Bahmutov &copy; 2013\n\nLicense: MIT - do anything with the code, but don't blame me if it does not work.\n\nSupport: if you find any problems with this module, email / tweet / open issue on Github\n\n[clean-console-icon]: https://nodei.co/npm/clean-console.png?downloads=true\n[clean-console-url]: https://npmjs.org/package/clean-console\n[clean-console-ci-image]: https://travis-ci.org/bahmutov/clean-console.png?branch=master\n[clean-console-ci-url]: https://travis-ci.org/bahmutov/clean-console\n[clean-console-dependencies-image]: https://david-dm.org/bahmutov/clean-console.png\n[clean-console-dependencies-url]: https://david-dm.org/bahmutov/clean-console\n[clean-console-devdependencies-image]: https://david-dm.org/bahmutov/clean-console/dev-status.png\n[clean-console-devdependencies-url]: https://david-dm.org/bahmutov/clean-console#info=devDependencies\n[endorse-image]: https://api.coderwall.com/bahmutov/endorsecount.png\n[endorse-url]: https://coderwall.com/bahmutov\n",
   "bugs": {
     "url": "https://github.com/bahmutov/clean-console/issues"
   },
-  "_id": "clean-console@0.2.2",
-  "_from": "clean-console@0.2.2"
+  "_id": "read_browser_console@0.0.1",
+  "_from": "read_browser_console@0.2.2"
 }

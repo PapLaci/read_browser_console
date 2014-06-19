@@ -1,11 +1,20 @@
 # clean-console
 
 Quickly loads a remote page using [phantomjs](http://phantomjs.org/)
-to check if there are any JavaScript console errors.
+to check if there are any JavaScript console errors. Finally the promise returns the console data.
 
 
 This is a copy (and a few added lines) of Gleb Bahmutov's clean-console.(https://www.npmjs.org/package/clean-console)
 All credits goes to him.
+
+
+
+[![NPM][clean-console-icon]][clean-console-url]
+
+[![Build status][clean-console-ci-image]][clean-console-ci-url]
+[![dependencies][clean-console-dependencies-image]][clean-console-dependencies-url]
+[![devdependencies][clean-console-devdependencies-image]][clean-console-devdependencies-url]
+[![endorse][endorse-image]][endorse-url]
 
 ## Install and use
 

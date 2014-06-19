@@ -1,6 +1,6 @@
 {
   "name": "read_browser_console",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Quickly loads remote url in phantomjs to check of JavaScript console errors.Finally the promise returns the console data.",
   "main": "index.js",
   "scripts": {
